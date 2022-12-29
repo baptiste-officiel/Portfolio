@@ -13,7 +13,7 @@ menu.addEventListener('click', function(){
 
 
 // ------------------------------------ compétences ----------------------------- 
-const competence = document.querySelectorAll('#list-competences .competence')
+const competence = document.querySelectorAll('#list-competences tr td.competence span')
 let competences = document.getElementById('list-competences');
 
 // competences.addEventListener('click', function(){

@@ -1,8 +1,17 @@
+@mixin txt-transparent {
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px $txt-color;
+}
+
+
 $back-color: #131313;
 $txt-color: #F5EEE6;
 $primary-color: #98c1d9;
 
-*, ::before, ::after{
+*,
+::before,
+::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -11,32 +20,32 @@ $primary-color: #98c1d9;
     scroll-behavior: smooth;
 }
 
-.container{
+.container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
 // h4{
-    // font-family: 'pointless', sans-serif;
-    // font-family: 'kilby', sans-serif;
-    // font-family: 'brakshoo', sans-serif;
-    // font-family: 'fasttrack', sans-serif;
-    // font-family: 'quickstarter', sans-serif;
-    // font-weight: 200;
+// font-family: 'pointless', sans-serif;
+// font-family: 'kilby', sans-serif;
+// font-family: 'brakshoo', sans-serif;
+// font-family: 'fasttrack', sans-serif;
+// font-family: 'quickstarter', sans-serif;
+// font-weight: 200;
 // }
 
-h1, h4{
-       font-family: 'kilby', sans-serif; 
-    //    font-weight: 200;
+h1,
+h4 {
+    font-family: 'kilby', sans-serif;
 }
 
 
@@ -51,10 +60,10 @@ h1, h4{
 @font-face {
     font-family: 'kilby';
     src: url(../fonts/kilby/kilby-bold-webfont.woff) format('woff'),
-         url(../fonts/kilby/kilby-bold-webfont.ttf) format('truetype'),
-         url(../fonts/kilby/kilby-bold-webfont.woff2) format('woff'),
-         url(../fonts/kilby/kilby-bold-webfont.svg#kilby) format('svg'),
-         url(../fonts/kilby/kilby-bold-webfont.eot) format('eot');
+        url(../fonts/kilby/kilby-bold-webfont.ttf) format('truetype'),
+        url(../fonts/kilby/kilby-bold-webfont.woff2) format('woff'),
+        url(../fonts/kilby/kilby-bold-webfont.svg#kilby) format('svg'),
+        url(../fonts/kilby/kilby-bold-webfont.eot) format('eot');
     font-style: normal;
 }
 
@@ -62,10 +71,10 @@ h1, h4{
 @font-face {
     font-family: 'pointless';
     src: url(../fonts/pointless/pointless-webfont.woff) format('woff'),
-         url(../fonts/pointless/pointless-webfont.ttf) format('truetype'),
-         url(../fonts/pointless/pointless-webfont.woff2) format('woff'),
-         url(../fonts/pointless/pointless-webfont.svg#pointless) format('svg'),
-         url(../fonts/pointless/pointless-webfont.eot) format('eot');
+        url(../fonts/pointless/pointless-webfont.ttf) format('truetype'),
+        url(../fonts/pointless/pointless-webfont.woff2) format('woff'),
+        url(../fonts/pointless/pointless-webfont.svg#pointless) format('svg'),
+        url(../fonts/pointless/pointless-webfont.eot) format('eot');
     font-style: normal;
 }
 
@@ -86,7 +95,7 @@ h1, h4{
 }
 
 
-body{
+body {
     width: 100%;
     height: 100vh;
     // height: 100%;
@@ -100,20 +109,23 @@ body{
 }
 
 // ------------------------------------- header ----------------------------------- 
-header{
+header {
     display: flex;
     flex-direction: column;
     background: inherit;
-    nav#nav-header{
+
+    nav#nav-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 15px 15px;
         background: inherit;
-        h4{
+
+        h4 {
             z-index: 2;
         }
-        ul#menu{
+
+        ul#menu {
             text-transform: uppercase;
             font-weight: 300;
             background: inherit;
@@ -131,7 +143,8 @@ header{
             overflow: hidden;
             transform: translateX(-100%);
             transition: 0.6s;
-            &::before{
+
+            &::before {
                 content: "";
                 position: absolute;
                 inset: 0;
@@ -139,43 +152,51 @@ header{
                 z-index: -1;
                 filter: blur(3px);
             }
-            .item-menu{
+
+            .item-menu {
                 padding: 15px 0;
-                a{
+
+                a {
                     transition: 0.3s;
                 }
-                a:hover{
+
+                a:hover {
                     color: $primary-color;
                 }
             }
-            &.show{
+
+            &.show {
                 transform: translateX(0);
                 width: 100%;
             }
         }
-        #burger{
+
+        #burger {
             cursor: pointer;
             z-index: 2;
         }
     }
-    #intro{
+
+    #intro {
         display: flex;
         flex-wrap: wrap;
         width: 90%;
         margin: 0 auto;
-        h1{
+
+        h1 {
             margin: 80px 0 40px;
             font-size: clamp(26px, 5vw, 52px);
         }
-        p{
+
+        p {
             margin-top: 20px;
             font-weight: 200;
         }
-}
+    }
 }
 
 
-header nav#nav-header ul#menu li:last-child a{
+header nav#nav-header ul#menu li:last-child a {
     background-color: $primary-color;
     padding: 10px 15px;
     border: 1px solid $primary-color;
@@ -183,7 +204,8 @@ header nav#nav-header ul#menu li:last-child a{
     margin-top: 10px;
     color: $back-color;
     font-weight: 300;
-    &:hover{
+
+    &:hover {
         background: none;
         color: $primary-color;
     }
@@ -191,123 +213,192 @@ header nav#nav-header ul#menu li:last-child a{
 
 
 // ---------------------------------- section compétences --------------------------------- 
-section#competences{
+section#competences {
     margin: 50px auto;
     width: 90%;
-    h2{
-        font-size: clamp(38px, 10vw, 64px);
-        font-weight: 400;
+
+    h2 {
+        font-size: clamp(28px, 9vw, 44px);
+        font-family: 'kilby', sans-serif;
         word-wrap: break-word;
         width: 100%;
-    }
-}
+        line-height: 3rem;
 
-section#competences ul#list-competences{
-    margin: 40px auto;
-    li.competence{
-        position: relative;
-        width: 100%;
-        margin: 10px auto;
-        font-family: 'kilby', 'Montserrat', sans-serif;
-        font-size: 0.7rem;
-        &::before{
-            content: "";
-            width: 150px;
-            height: 20px;
-            border: #F5EEE6 1px solid;
-            border-radius: 30px 0 30px 0;
-            position: absolute;
-            top: 0;
-            left: 50%;
+        span {
+            font-family: 'kilby', sans-serif;
+            @include txt-transparent();
+            font-weight: 800;
         }
     }
 }
 
-.animation::after{
-    content: "";
-    height: 20px;
-    background-color: $primary-color;
-    border-radius: 30px 0 30px 0;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    opacity: 0;
-    transform: translateX(-100%);
-    overflow: hidden;
-    animation-duration: 0.3s;
+// section#competences ul#list-competences{
+//     margin: 40px auto;
+//     li.competence{
+//         position: relative;
+//         width: 80%;
+//         margin: 10px auto;
+//         font-family: 'Montserrat', sans-serif;
+//         font-size: 1.2rem;
+//         font-weight: 200;
+//         // transform: translateX(50%);
+//         // background-color: rebeccapurple;
+//         &::before{
+//             content: "";
+//             width: 150px;
+//             height: 20px;
+//             border: #F5EEE6 1px solid;
+//             border-radius: 30px 0 30px 0;
+//             position: absolute;
+//             top: 0;
+//             left: 50%;
+//         }
+//     }
+// }
+
+// .animation::after{
+//     content: "";
+//     height: 20px;
+//     background-color: $primary-color;
+//     border-radius: 30px 0 30px 0;
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+//     opacity: 0;
+//     transform: translateX(-100%);
+//     overflow: hidden;
+//     animation-duration: 0.3s;
+//     animation: slide 1.6s ease-in-out forwards;
+// }
+
+
+section#competences table#list-competences {
+    margin: 40px auto;
+    width: 90%;
+
+    tr {
+        td {
+
+            // text-align: center;
+            &:first-child {
+                width: 30%;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.2rem;
+                font-weight: 200;
+            }
+
+            span {
+                display: block;
+                margin: 5px 0 5px auto;
+                width: 70%;
+                height: 20px;
+                // background-color: rebeccapurple;
+                border: 1px solid $txt-color;
+                position: relative;
+                overflow: hidden;
+                border-radius: 30px 0 30px 0;
+                // text-align: right;
+
+                &::after {
+                    content: '';
+                    // width: 80%;
+                    height: 100%;
+                    background-color: $primary-color;
+                    border: 1px solid $primary-color;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translateX(-100%);
+                    border-radius: 30px 0 30px 0;
+                }
+            }
+        }
+    }
+}
+
+.animation::after {
     animation: slide 1.6s ease-in-out forwards;
+
 }
 
 
 // ----------------------------- animation compétences -------------------- 
 @keyframes slide {
-    100%{
+    100% {
         transform: translateX(0%);
-        opacity: 1;
     }
 }
 
-section#competences ul#list-competences .competence-first-part li.competence:nth-child(1)::after{
-    width: 110px;
+section#competences table#list-competences .competence-first-part tr:nth-child(1) td span::after {
+    width: 75%;
 }
 
-section#competences ul#list-competences .competence-first-part li.competence:nth-child(2)::after{
-    width: 130px;
+section#competences table#list-competences .competence-first-part tr:nth-child(2) td span::after {
+    width: 80%;
 }
 
-section#competences ul#list-competences .competence-first-part li.competence:nth-child(3)::after{
-    width: 95px;
+section#competences table#list-competences .competence-first-part tr:nth-child(3) td span::after {
+    width: 65%;
 }
 
-section#competences ul#list-competences .competence-first-part li.competence:nth-child(4)::after{
-    width: 85px;
+section#competences table#list-competences .competence-first-part tr:nth-child(4) td span::after {
+    width: 60%;
 }
 
-section#competences ul#list-competences .competence-first-part li.competence:nth-child(5)::after{
-    width: 65px;
+section#competences table#list-competences .competence-first-part tr:nth-child(5) td span::after {
+    width: 45%;
 }
 
-section#competences ul#list-competences .competence-second-part li.competence:nth-child(1)::after{
-    width: 85px;
+section#competences table#list-competences .competence-second-part tr:nth-child(1) td span::after {
+    width: 48%;
 }
 
-section#competences ul#list-competences .competence-second-part li.competence:nth-child(2)::after{
-    width: 75px;
+section#competences table#list-competences .competence-second-part tr:nth-child(2) td span::after {
+    width: 40%;
 }
 
-section#competences ul#list-competences .competence-second-part li.competence:nth-child(3)::after{
-    width: 70px;
+section#competences table#list-competences .competence-second-part tr:nth-child(3) td span::after {
+    width: 45%;
 }
 
-section#competences ul#list-competences .competence-second-part li.competence:nth-child(4)::after{
-    width: 60px;
+section#competences table#list-competences .competence-second-part tr:nth-child(4) td span::after {
+    width: 30%;
 }
 
-section#competences ul#list-competences .competence-second-part li.competence:nth-child(5)::after{
-    width: 50px;
+section#competences table#list-competences .competence-second-part tr:nth-child(5) td span::after {
+    width: 30%;
 }
 
 
 // ---------------------------------------- section projets ----------------------- 
-#projets{
-    .slideshow{
+#projets {
+    .slideshow {
         display: flex;
         overflow: hidden;
-        h2{
+
+        h2 {
             margin: 30px 0;
             animation: slideshow 1.5s infinite linear;
             padding: 0 10px;
-        }     
+            font-family: 'kilby', 'Montserrat', sans-serif;
+            font-size: 1rem;
+            // background-color: rebeccapurple;
+            // width: 100%;
+            // transform: translateX(-100%);
+        }
     }
-    p{
+
+    p {
         width: 90%;
         margin: 0 auto;
         text-align: center;
         font-weight: 200;
-        a{
+
+        a {
             color: $primary-color;
             transition: 0.3s;
-            &:hover{
+
+            &:hover {
                 color: $txt-color;
             }
         }
@@ -315,32 +406,35 @@ section#competences ul#list-competences .competence-second-part li.competence:nt
 }
 
 @keyframes slideshow {
-    0%{
+    0% {
         transform: translateX(0)
     }
-    100%{
+
+    100% {
         transform: translateX(-100%);
     }
 }
 
 
-#projets .projets-cards{
+#projets .projets-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 30px auto;
-    a{
+
+    a {
         display: block;
         position: relative;
         margin: 20px;
         padding: 0;
         transition: 0.4s;
 
-        &:nth-child(2n -1) img{
+        &:nth-child(2n -1) img {
             object-position: 0;
         }
-        &::after{
+
+        &::after {
             content: "voir";
             background-color: rgba(30, 30, 30, 0.74);
             width: 100%;
@@ -359,11 +453,13 @@ section#competences ul#list-competences .competence-second-part li.competence:nt
             align-items: center;
             opacity: 0;
         }
-        &:hover::after{
+
+        &:hover::after {
             animation: apparition 0.5s forwards;
         }
     }
-    img{
+
+    img {
         width: 40vw;
         max-width: 350px;
         height: 250px;
@@ -375,31 +471,41 @@ section#competences ul#list-competences .competence-second-part li.competence:nt
 }
 
 @keyframes apparition {
-    100%{
+    100% {
         opacity: 1;
     }
 }
 
 // -------------------------------- contact ------------------------------ 
-#contact-section{
+#contact-section {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    h2{
-        width: 100%;
-        text-align: right;
-        font-size: clamp(52px, 12vw, 64px);
-        font-weight: 400;
+
+    h2 {
+        font-size: clamp(28px, 9vw, 44px);
+        font-family: 'kilby', sans-serif;
         word-wrap: break-word;
+        width: 100%;
+        line-height: 3rem;
+        text-align: right;
+
+        span {
+            @include txt-transparent();
+            font-family: 'kilby', sans-serif;
+        }
     }
-    #contact-form{
+
+    #contact-form {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         margin: 50px auto 100px;
-        input, textarea{
+
+        input,
+        textarea {
             margin: 5px 0;
             padding: 5px 10px;
             border: none;
@@ -409,11 +515,13 @@ section#competences ul#list-competences .competence-second-part li.competence:nt
             color: $primary-color;
             opacity: 0.9;
         }
-        input::placeholder{
+
+        input::placeholder {
             color: $primary-color;
             opacity: 0.9;
         }
-        button{
+
+        button {
             display: block;
             width: 100%;
             margin: 20px auto;
@@ -426,7 +534,8 @@ section#competences ul#list-competences .competence-second-part li.competence:nt
             padding: 12px 20px;
             cursor: pointer;
             transition: 0.3s;
-            &:hover{
+
+            &:hover {
                 background: none;
                 color: $primary-color;
             }
@@ -440,129 +549,178 @@ section#competences ul#list-competences .competence-second-part li.competence:nt
 
 
 // --------------------------------------- media queries --------------------------- 
-@media  screen and (min-width: 1024px) {
-    // ------------------------------------- header ----------------------------------- 
-header{
+@media screen and (min-width: 1024px) {
 
-    nav#nav-header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: none;
-        padding: 20px 0;
-        width: 90%;
-        ul#menu{
-            text-transform: uppercase;
-            font-weight: 200;
-            z-index: 1;
-            position: relative;
-            inset: 0;
-            width: 60%;
-            height: auto;
-            margin: auto 0;
+    // ------------------------------------- header ----------------------------------- 
+    header {
+        nav#nav-header {
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            transform: translate(0);
-            &::before{
-                display: none;
-            }
-            .item-menu{
-                padding: 15px 0;
-                a{
-                    padding: 10px 15px;
-                    border-radius: 20px;
-                    font-weight: 300;
-                    transition: 0.3s;
-                    width: 25%;
+            background: none;
+            padding: 20px 0;
+            width: 90%;
+            ul#menu {
+                text-transform: uppercase;
+                font-weight: 200;
+                z-index: 1;
+                position: relative;
+                inset: 0;
+                width: 60%;
+                height: auto;
+                margin: auto 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                transform: translate(0);
+                &::before {
+                    display: none;
                 }
-                a:hover{
-                    color: $primary-color;
+                .item-menu {
+                    padding: 15px 0;
+                    a {
+                        padding: 10px 15px;
+                        border-radius: 20px;
+                        font-weight: 300;
+                        transition: 0.3s;
+                        width: 25%;
+                        position: relative;
+                        overflow: hidden;
+                        &::after {
+                            // color: $primary-color;
+                            content: '';
+                            // width: calc(100% - 30px);
+                            width: 0;
+                            height: 1px;
+                            background-color: $primary-color;
+                            position: absolute;
+                            bottom: 0;
+                            left: 15px;
+                            // transform: translateX(-100%);
+                            overflow: hidden;
+                            transition: 0.6s;
+                        }
+                    }
+                    a:hover {
+                        color: $txt-color;
+
+                        &::after {
+                            // transform: translateX(0);
+                            width: calc(100% - 30px);
+                        }
+                    }
                 }
             }
         }
-        #burger{
+    }
+
+header nav#nav-header ul#menu .item-menu:last-child a::after{
+    display: none;
+}
+
+header nav#nav-header  #burger {
             display: none;
         }
+
+header #intro {
+            justify-content: space-between;
+            align-items: flex-end;
+            h1 {
+                width: 40%;
+            }
+
+            #txt-intro {
+                width: 45%;
+            }
+
+            p {
+                width: 100%;
+            }
+        }
+
+
+    // ---------------------------------- section compétences --------------------------------- 
+    section#competences {
+        margin: 100px auto;
     }
-    #intro{
-        justify-content: space-between;
-        align-items: flex-end;
-        h1{
-            width: 40%;
-        }
-        #txt-intro{
-            width: 45%;
-        }
-        p{
-            width: 100%;
-        }
-}
-}
 
-
-// ---------------------------------- section compétences --------------------------------- 
-section#competences{
-    margin: 100px auto;
-}
-
-section#competences ul#list-competences{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 40px 0;
-    .competence-first-part, .competence-second-part{
-        width: 30%;
-    }
-}
-
-
-
-// ---------------------------------------- section projets ----------------------- 
-#projets{
-    
-    .slideshow{
+    section#competences table#list-competences {
+        width: 80%;
         display: flex;
-        overflow: hidden;
-        h2{
-            margin: 30px 0;
-            animation: slideshow 1.5s infinite linear;
-            padding: 0 10px;
-        }     
-    }
-}
+        flex-wrap: wrap;
+        // justify-content: space-around;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
 
-@keyframes slideshow {
-    0%{
-        transform: translateX(0)
-    }
-    100%{
-        transform: translateX(-100%);
-    }
-}
+        .competence-first-part,
+        .competence-second-part {
+            width: 50%;
+            align-self: center;
 
-// ------------------------------------------ projets -------------------------------- 
-#projets .projets-cards{
-    width: 100%;
-    // justify-content: space-between;
-    margin: 30px auto 0;
-    img{
-        width: 250px;
-    }
-}
+            // transform: translateX(50%);
+            tr {
+                margin: 0 auto;
+                width: 100%;
 
-
-// -------------------------------- contact ------------------------------ 
-#contact-section{
-    margin: 100px auto;
-    #contact-form{
-        width: 60%;
-        button{
-            width: 100px;
-            border-radius: 20px;
+                td {
+                    padding: 0 30px;
+                }
+            }
         }
-}
-}
+    }
+
+
+
+    // ---------------------------------------- section projets ----------------------- 
+    #projets {
+
+        .slideshow {
+            display: flex;
+            overflow: hidden;
+
+            h2 {
+                margin: 30px 0;
+                animation: slideshow 1.5s infinite linear;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    @keyframes slideshow {
+        0% {
+            transform: translateX(0)
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    // ------------------------------------------ projets -------------------------------- 
+    #projets .projets-cards {
+        width: 100%;
+        // justify-content: space-between;
+        margin: 30px auto 0;
+
+        img {
+            width: 250px;
+        }
+    }
+
+
+    // -------------------------------- contact ------------------------------ 
+    #contact-section {
+        margin: 100px auto;
+
+        #contact-form {
+            width: 60%;
+
+            button {
+                width: 100px;
+                border-radius: 20px;
+            }
+        }
+    }
 }
