@@ -7,7 +7,7 @@ console.log(supabase)
 
 const form = document.querySelector('#contact-form');
 form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     const formInputs = form.querySelectorAll('input, textarea');
 
